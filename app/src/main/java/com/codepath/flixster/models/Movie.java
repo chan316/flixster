@@ -13,12 +13,12 @@ import java.util.ArrayList;
 public class Movie {
     private String posterPath;
     private String originalTitle;
-    private String overView;
+    private String overview;
 
     public Movie(JSONObject jsonObject) throws JSONException {
         this.posterPath = jsonObject.getString("poster_path");
         this.originalTitle = jsonObject.getString("original_title");
-        this.overView = jsonObject.getString("overview");
+        this.overview = jsonObject.getString("overview");
     }
 
     public static ArrayList<Movie> fromJsonArray(JSONArray array) {
@@ -44,8 +44,8 @@ public class Movie {
         return originalTitle;
     }
 
-    public String getOverView() {
+    public String getOverview() {
 
-        return overView;
+        return overview;
     }
 }
