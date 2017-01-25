@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
+
     xmlns:tools="http://schemas.android.com/tools">
 
 
@@ -25,6 +27,7 @@
         android:layout_toRightOf="@+id/lvMovieImage"
         android:layout_toEndOf="@+id/lvMovieImage"
         android:id="@+id/tvTitle"
+        style="@style/TitleFont"
         tools:text="Moana"/>
 
     <TextView
@@ -35,5 +38,6 @@
         android:layout_toRightOf="@+id/lvMovieImage"
         android:layout_toEndOf="@+id/lvMovieImage"
         android:id="@+id/tvOverview"
+        android:textColor="@color/white"
         tools:text="In Ancient Polynesia, when a terrible disaster occurs, the island is cursed in Maui" />
 </RelativeLayout>
