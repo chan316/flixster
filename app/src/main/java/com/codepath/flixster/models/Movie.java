@@ -15,12 +15,30 @@ public class Movie {
     private String backdropPath;
     private String originalTitle;
     private String overview;
+    private double voteAverage;
+
+    public MovieTypes movieType;
+
+    public enum MovieTypes {
+        POPULAR, REGULAR
+    }
+
 
     public Movie(JSONObject jsonObject) throws JSONException {
         this.posterPath = jsonObject.getString("poster_path");
         this.backdropPath = jsonObject.getString("backdrop_path");
         this.originalTitle = jsonObject.getString("original_title");
         this.overview = jsonObject.getString("overview");
+        this.voteAverage = jsonObject.getDouble("vote_average");
+
+        if (this.voteAverage >= 5) {
+            this.movieType = MovieTypes.POPULAR;
+            //this.movieType = MovieTypes.REGULAR;
+        } else {
+            this.movieType = MovieTypes.REGULAR;
+            //this.movieType = MovieTypes.POPULAR;
+        }
+
     }
 
     public static ArrayList<Movie> fromJsonArray(JSONArray array) {
@@ -43,7 +61,7 @@ public class Movie {
     }
 
     public String getBackdropPath() {
-        return String.format("https://image.tmdb.org/t/p/w342/%s", backdropPath);
+        return String.format("https://image.tmdb.org/t/p/w500/%s", backdropPath);
     }
 
     public String getOriginalTitle() {
@@ -52,5 +70,9 @@ public class Movie {
 
     public String getOverview() {
         return overview;
+    }
+
+    public MovieTypes getMovieType() {
+        return this.movieType;
     }
 }

@@ -37,5 +37,8 @@
         android:layout_toRightOf="@+id/lvMovieImage"
         android:layout_toEndOf="@+id/lvMovieImage"
         android:id="@+id/tvOverview"
+        android:textColor="@color/white"
+        android:ellipsize="end"
+        android:maxLines="3"
         tools:text="In Ancient Polynesia, when a terrible disaster occurs, the island is cursed in Maui" />
 </RelativeLayout>
